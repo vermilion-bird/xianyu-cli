@@ -1,0 +1,2 @@
+[console_scripts]
+xianyu = xianyu_cli.cli:cli

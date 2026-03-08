@@ -1,0 +1,95 @@
+Metadata-Version: 2.1
+Name: xianyu-cli
+Version: 0.1.0
+Summary: 闲鱼消息管理 CLI 工具
+Home-page: https://github.com/shaxiu/XianyuAutoAgent
+Author: CodeNinja
+Author-email: coderxiu@qq.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# xianyu-cli
+
+闲鱼 CLI 工具 🐟
+
+基于 [XianyuAutoAgent](https://github.com/shaxiu/XianyuAutoAgent) 项目的 API 实现。
+
+## 安装
+
+```bash
+pip install -r requirements.txt
+pip install -e .
+```
+
+## 配置
+
+1. 复制 `.env.example` 为 `.env`
+2. 设置你的 Cookie：
+
+```bash
+# 方式一: 命令行设置
+xianyu config set-cookies "your_cookie_string"
+
+# 方式二: 直接编辑 .env 文件
+```
+
+获取 Cookie: 打开闲鱼网页版 → F12 → Network → 点击任意请求 → 复制 Request Headers 中的 Cookie
+
+## 使用
+
+### 检查登录状态
+```bash
+xianyu login
+```
+
+### 获取商品详情
+```bash
+xianyu item <商品ID>
+```
+
+### 监听实时消息
+```bash
+xianyu listen
+```
+
+### 配置管理
+```bash
+xianyu config show      # 显示当前配置
+xianyu config set-cookies <cookies>  # 设置 Cookie
+```
+
+## 命令列表
+
+| 命令 | 说明 |
+|------|------|
+| `login` | 检查登录状态 |
+| `item <id>` | 获取商品详情 |
+| `listen` | 监听实时消息 |
+| `config show` | 显示配置 |
+| `config set-cookies` | 设置 Cookie |
+
+## 开发
+
+```bash
+# 安装开发依赖
+pip install -r requirements.txt
+
+# 本地安装
+pip install -e .
+
+# 运行
+xianyu --help
+```
+
+## 相关项目
+
+- [XianyuAutoAgent](https://github.com/shaxiu/XianyuAutoAgent) - 智能闲鱼客服机器人
